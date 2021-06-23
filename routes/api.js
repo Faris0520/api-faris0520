@@ -1,3 +1,5 @@
+//Last edit = Line 320
+
 __path = process.cwd()
 
 var express = require('express');
@@ -8,7 +10,7 @@ var zahirr = db.get("zahirr");
 	console.log('')
 }
 
-var creatorList = ['@zahirrr','@zhirrrgans','@zhirr_ajalah','@zahiranjay', '@zahirganssss','@zhirrganteng','@zahirrgantengg'];
+var creatorList = ['@Faris0520','@farrr.ss','@FarisDaffa'];
 var creator = creatorList[Math.floor(Math.random() * creatorList.length)];
 
 
@@ -41,7 +43,7 @@ loghandler = {
         creator: `${creator}`,
         code: 406,
         message: 'masukan parameter apikey',
-        getApikey: 'gak punya apikey? chat gw aja yaaa di wa.me/6283898698875 , key nya gratis kok gan, jadi santuyy ajaa'
+        getApikey: 'apikeynya = ```hi``` \nKecil semua'
     },
     notkey: {
         status: false,
@@ -113,7 +115,7 @@ loghandler = {
         status: false,
         creator: `${creator}`,
         code: 406,
-        message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6283898698875 , key nya gratis kok gan, jadi santuyy ajaa'
+        message: 'apikey invalid. \n Apikey : ```hi``` '
     },
     invalidlink: {
         status: false,
@@ -134,7 +136,7 @@ loghandler = {
     error: {
         status: false,
         creator: `${creator}`,
-        message: 'mungkin sedang dilakukan perbaikan'
+        message: 'error, sry. try few minutes'
     }
 }
 
@@ -153,7 +155,7 @@ var len = 15
             randomlagi += arr[Math.floor(Math.random() * arr.length)];
         }
 
-        var randomTextNumber = random+randomlagi+'---------ZahirGanteng'+'ZHIRRR--GANS';
+        var randomTextNumber = random+randomlagi+'---------Faris0520'+'Faris--Daffa';
         
  
  async function cekApiKey(api) {
@@ -163,7 +165,7 @@ var len = 15
 router.get('/find', async (req, res, next) => {
     var apikey = req.query.apikey
     if (!apikey) return res.json(loghandler.notparam)
-    if (apikey != 'zahirgans') return res.json(loghandler.invalidKey)
+    if (apikey != 'hi') return res.json(loghandler.invalidKey)
 
     try {
         zahirr.find()
@@ -216,7 +218,7 @@ router.get('/addapikey', (req, res, next) => {
         status = req.query.status,
         apikeyInput  = req.query.apikeyInput,
         email = req.query.email,
-        nomorhp = req.query.nomorhp
+        nomorhp = req.query.nomorhp,
         name = req.query.name,
         age = req.query.age,
         country = req.query.country;
@@ -224,7 +226,7 @@ router.get('/addapikey', (req, res, next) => {
 
     if (!apikey) return res.json(loghandler.notparam)
     if (!(status && apikeyInput && email && nomorhp && name && age && country && exp)) return res.json(loghandler.notAddApiKey)
-    if (apikey != 'zahirgans') return res.json(loghandler.invalidKey)
+    if (apikey != 'hi') return res.json(loghandler.invalidKey)
 
     try {
         zahirr.insert({
@@ -255,7 +257,7 @@ router.get('/remove', (req, res, next) => {
         status = req.query.status,
         apikeyInput  = req.query.apikeyInput,
         email = req.query.email,
-        nomorhp = req.query.nomorhp
+        nomorhp = req.query.nomorhp,
         name = req.query.name,
         age = req.query.age,
         country = req.query.country;
@@ -263,7 +265,7 @@ router.get('/remove', (req, res, next) => {
 
     if (!apikey) return res.json(loghandler.notparam)
     if (!(status && apikeyInput && email && nomorhp && name && age && country && exp)) return res.json(loghandler.notAddApiKey)
-    if (apikey != 'zahirgans') return res.json(loghandler.invalidKey)
+    if (apikey != 'hi') return res.json(loghandler.invalidKey)
 
     try {
         zahirr.remove({
@@ -295,7 +297,7 @@ router.get('/tiktod', async (req, res, next) => {
 
 
 	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'zahirgans') return res.json(loghandler.invalidKey)
+	if(apikeyInput != 'hi') return res.json(loghandler.invalidKey)
      if (!url) return res.json(loghandler.noturl)
 
      TikTokScraper.getVideoMeta(url, options)
@@ -317,7 +319,7 @@ router.get('/tiktod/stalk', async (req, res, next) => {
         username = req.query.username
 
 	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'zahirgans') return res.json(loghandler.invalidKey)
+	if(apikeyInput != 'hi') return res.json(loghandler.invalidKey)
     if (!username) return res.json(loghandler.notusername)
 
 
